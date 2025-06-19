@@ -1,18 +1,18 @@
-# funnel_dashboard.py
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 
-# Configure the page
+
 st.set_page_config(
     page_title="Funnel Analysis Dashboard",
     page_icon="📊",
     layout="wide"
 )
 
-# Custom CSS for better styling
+
 st.markdown("""
 <style>
     .main {padding: 2rem;}
@@ -29,13 +29,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Title and description
+
 st.title("📈 E-Commerce Funnel Analysis Dashboard")
 st.markdown("""
 Analyze user behavior through key conversion funnel stages to identify drop-off points and optimize performance.
 """)
 
-# Load data
+
 @st.cache_data
 def load_data():
     try:
@@ -50,7 +50,7 @@ def load_data():
 
 funnel_metrics, device_analysis, time_analysis, traffic_analysis = load_data()
 
-# Sidebar filters
+
 st.sidebar.header("Filters")
 show_raw_data = st.sidebar.checkbox("Show raw data", False)
 analysis_type = st.sidebar.radio(
@@ -58,9 +58,9 @@ analysis_type = st.sidebar.radio(
     ["Overview", "Device Breakdown", "Traffic Sources", "Time Analysis"]
 )
 
-# Main dashboard
+
 if analysis_type == "Overview":
-    # Overview metrics
+
     st.header("Funnel Overview")
     
     col1, col2, col3 = st.columns(3)
@@ -73,7 +73,7 @@ if analysis_type == "Overview":
         st.metric("Biggest Drop-off", 
                  f"{funnel_metrics.loc[max_drop_idx, 'event'].replace('_', ' ').title()} ({funnel_metrics.loc[max_drop_idx, 'drop_off_pct']}%)")
 
-    # Funnel visualization
+    
     st.subheader("Conversion Funnel")
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.set_style("whitegrid")
@@ -86,10 +86,10 @@ if analysis_type == "Overview":
         palette=palette
     )
 
-    # Format labels
+   
     stage_labels = [s.replace('_', ' ').title() for s in funnel_metrics['event']]
 
-    # Annotate conversion rates
+  
     for i, row in enumerate(funnel_metrics.itertuples()):
         ax.text(
             i, 
@@ -100,7 +100,7 @@ if analysis_type == "Overview":
             fontsize=11
         )
         
-    # Annotate drop-offs
+
     for i in range(1, len(funnel_metrics)):
         prev = funnel_metrics.iloc[i-1]['users']
         curr = funnel_metrics.iloc[i]['users']
@@ -126,7 +126,7 @@ if analysis_type == "Overview":
 elif analysis_type == "Device Breakdown":
     st.header("Device Performance Analysis")
     
-    # Device conversion rates
+    
     st.subheader("Conversion by Device Type")
     device_cols = [col for col in device_analysis.columns if '_conv' in col]
     device_conv = device_analysis[['event'] + device_cols].copy()
@@ -142,7 +142,7 @@ elif analysis_type == "Device Breakdown":
 elif analysis_type == "Traffic Sources":
     st.header("Traffic Source Analysis")
     
-    # Traffic source conversion
+    
     st.subheader("Conversion by Acquisition Channel")
     if not traffic_analysis.empty:
         traffic_pivot = traffic_analysis.pivot(
@@ -174,7 +174,7 @@ elif analysis_type == "Time Analysis":
     else:
         st.warning("No time analysis data available")
 
-# Raw data view
+
 if show_raw_data:
     st.header("Raw Data")
     st.subheader("Funnel Metrics")
@@ -191,7 +191,7 @@ if show_raw_data:
         st.subheader("Time Analysis")
         st.dataframe(time_analysis)
 
-# Footer
+
 st.markdown("---")
 st.markdown("""
 **Funnel Analysis Dashboard**  
