@@ -14,30 +14,8 @@ This project analyzes user behavior across a simulated e-commerce conversion fun
 
 ---
 
-## 📁 Project Structure
 
-funnel-dropoff-analysis/ notebook/
-├── dataset.ipynb # Base analysis of funnel stages
-├── Preprocess_data.ipynb # Data cleaning and prep
-├── Visualisation.ipynb # Graphs & bar chart for drop-offs
-├── Calculate_metrics.ipynb # Derived metrics like drop-off %
-├── Advanced_analysis.ipynb # Optional deep dives
-├── funnel_dashboard.py # (Optional) Dashboard logic
-├── data/
-│ ├── funnel_data.csv
-│ ├── funnel_metrics.csv
-│ ├── traffic_analysis.csv
-│ ├── device_analysis.csv
-│ ├── time_analysis.csv
-│ ├── traffic_analysis_pivot.csv
-│ ├── processed_funnel_data.csv
-
-
-
-
----
-
-## 📈 Sample Funnel Output
+## 📈 Funnel Output
 
 | Stage         | Users  | Drop-off % | 
 |---------------|------- |------------|
