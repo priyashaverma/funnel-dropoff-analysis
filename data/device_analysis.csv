@@ -1,0 +1,6 @@
+event,Desktop,Mobile,Tablet,Desktop_conv,Mobile_conv,Tablet_conv
+add_to_cart,653,490,676,1.0,1.0,1.0
+checkout_start,292,164,309,0.447,0.335,0.457
+landing_page,1622,1751,1627,2.484,3.573,2.407
+product_view,1150,1036,1135,1.761,2.114,1.679
+purchase_complete,230,107,253,0.352,0.218,0.374

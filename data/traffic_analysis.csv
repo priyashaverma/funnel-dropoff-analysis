@@ -1,0 +1,26 @@
+traffic_source,event,users,conversion_rate
+Direct,add_to_cart,399,0.3966202783300199
+Direct,checkout_start,180,0.17892644135188868
+Direct,landing_page,1006,1.0
+Direct,product_view,695,0.6908548707753479
+Direct,purchase_complete,151,0.15009940357852883
+Email,add_to_cart,426,0.416015625
+Email,checkout_start,185,0.1806640625
+Email,landing_page,1024,1.0
+Email,product_view,729,0.7119140625
+Email,purchase_complete,147,0.1435546875
+Organic Search,add_to_cart,369,0.3804123711340206
+Organic Search,checkout_start,160,0.16494845360824742
+Organic Search,landing_page,970,1.0
+Organic Search,product_view,667,0.6876288659793814
+Organic Search,purchase_complete,120,0.12371134020618557
+Paid Ads,add_to_cart,230,0.22136669874879691
+Paid Ads,checkout_start,69,0.06641000962463908
+Paid Ads,landing_page,1039,1.0
+Paid Ads,product_view,559,0.5380173243503369
+Paid Ads,purchase_complete,40,0.03849855630413859
+Social Media,add_to_cart,395,0.41103017689906346
+Social Media,checkout_start,171,0.17793964620187305
+Social Media,landing_page,961,1.0
+Social Media,product_view,671,0.6982310093652445
+Social Media,purchase_complete,132,0.13735691987513007
